@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/11bc3c9fe9.js" crossorigin="anonymous"></script>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <title>Document</title>
+  <style type="text/css">
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+.box{
+  
+  font-family: 'Open Sans', sans-serif;
+  display:grid;
+  place-items:center;
+ height:30vh;
+  background-color:voilet;
+      
+}
+*{
+  margin:0;
+  padding:0;
+}
+.container-hold{
+  width:30%;
+
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 50px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  width: 40px;
+  height: 50px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.wrap{
+  width: 100%;
+  margin-bottom:20px;
+
+}
+input {
+    font-size: 24px;
+}
+</style>
+</head>
+<body>
+
+  <aside class="aside-section">
+    <div class="logo-container">
+      <h1 class="brand-name">
+        <i class="fa-solid fa-book-open-reader"></i>
+        Ineuron Library
+      </h1>
+       </div>
+     <div onclick="display('section6')">  
+     <div class="nav-button ">
+          <p>
+            <i class="searchButton"></i>
+            search
+          </p>
+        </div>
+        </div>
+      </div>
+    </div>
+     <div onclick="display('section1')">
+        <div class="nav-button ">
+          <p>
+            <i class="fa-solid fa-book-atlas"></i>
+            view
+          </p>
+        </div>
+      </div>
+    <nav class="navigation">
+      <a href="issue_book.html">
+        <div class="nav-button" >
+          <p>
+            <i class='bx bx-cart-add'></i>
+            Issue Book
+          </p>
+        </div>
+      </a>
+      <a href="return_book.html">
+        <div class="nav-button">
+          <p>
+            <i class='bx bxs-cart-download'></i>
+            return book
+          </p>
+        </div>
+      </a>
+      <div onclick="display('section3')">
+        <div class="nav-button ">
+          <p>
+            <i class="fa-solid fa-book-atlas"></i>
+            manage library
+          </p>
+        </div>
+      </div>
+      <div onclick="display('section4') ">
+        <div class="nav-button ">
+          <p>
+            <i class="fa-solid fa-people-roof"></i>
+            manage student
+          </p>
+        </div>
+      </div>
+      <div onclick="display('section5')">
+        <div class="nav-button ">
+          <p>
+            <i class="fa-solid fa-clipboard-user"></i>
+            view issue record
+          </p>
+        </div>
+      </div>
+      <div class=" log-out">
+        <p>
+          <a href="admin.html" class="log-out-a"><i class="fa-solid fa-right-from-bracket"></i>
+            Log out</a>
+        </p>
+      </div>
+    </nav>
+  </aside>
+  <div id='section6'> 
+  <div class='box'>
+<h1 style="color:#fc6603;"> Book Search</h1>
+<b style="font-size:18px" >Search by Book Name or Author or Subject</b>
+<div class='container-hold'>
+
+ <div class="wrap">
+
+  <form  method="get"  action="./search/name">
+    <div class="search">
+      <input type="text" required name="book name" class="searchTerm" placeholder="search">
+      <button type="submit" class="searchButton">
+        <i class="fa fa-search"></i>
+     </button>
+   </div>
+  </form>
+</div>
+</div>
+</div>
+</div>
+    <div id="section1">
+    <div class="margin-lt">
+      <div class="drop_down">
+        <h1 class="header" style="color:#fc6603;" >view</h1>
+        <form method="get" action="./view/allstudents">
+        <button type="submit" class="btn" style="background-color:green; margin-bottom:20px;">
+        <i class="fa-solid fa-cloud-arrow-up"></i>
+            view all students
+        </button>
+        </form>
+         <form method="get" action="./view/allbooks">
+        <button type="submit" class="btn" style="background-color:green; margin-bottom:20px;">
+        <i class="fa-solid fa-cloud-arrow-up"></i>
+            view all Books
+        </button>
+        </form>
+       
+        
+        </div>
+        </div>
+        </div>
+  <!-- Manage Library  -->
+  <div id="section3">
+    <div class="margin-lt">
+      <div class="drop_down">
+        <h1 class="header" style="color:#fc6603;" >Manage Library</h1>
+        <a href="addbook.html">
+          <h1 style="color:#039dfc;">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            Add
+          </h1>
+        </a>
+        <a href="updatebook.html">
+          <h1 style="color:#039dfc;">
+            <i class="fa-solid fa-file-pen"></i>
+            Update
+          </h1>
+        </a>
+        <a href="deletebook.html">
+          <h1 style="color:#039dfc;">
+            <i class="fa-solid fa-trash-can"></i>
+            Delete
+          </h1>
+        </a>
+        <a href="searchbook.html">
+          <h1 style="color:#039dfc;">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            Search
+          </h1>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- Manage Student -->
+  <div id="section4">
+    <div class="margin-lt">
+      <div class="drop_down">
+        <h1 class="header" style="color:#fc6603;" >Manage Student</h1>
+           <a href="">
+          <h1 style="color:#039dfc;">
+            <i class="fa-solid fa-file-pen"></i>
+            Add
+          </h1>
+        </a>
+    
+        <a href="updatestudent.html">
+          <h1 style="color:#039dfc;">
+            <i class="fa-solid fa-file-pen"></i>
+            Update
+          </h1>
+        </a>
+        <a href="deletestudent.html">
+          <h1 style="color:#039dfc;">
+            <i class="fa-solid fa-trash-can"></i>
+            Delete
+          </h1>
+        </a>
+        <a href="searchstudent.html">
+          <h1 style="color:#039dfc;">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            Search
+          </h1>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- Manage Issue Record -->
+  <div id="section5">
+    <div class="margin-lt">
+      <div class="drop_down">
+        <h1 class="header" style="color:#fc6603;" ;>View Issue Record</h1>
+          <form method="get" action="./records/allrecords">
+        <button type="submit" class="btn" style="background-color:blue; margin-bottom:20px;">
+            <i class="fa-solid fa-file-pen"></i>
+            All Records
+            </button>
+             </form>
+       
+          <form method="get" action="./records/pendingrecords">
+        <button type="submit" class="btn" style="background-color:blue; margin-bottom:20px;">
+            <i class="fa-solid fa-file-pen"></i>
+            Pending Records
+            </button>
+            </form>
+          <form method="get" action="./records/returnedrecords">
+        <button type="submit" class="btn" style="background-color:blue; margin-bottom:20px;">
+            <i class="fa-solid fa-file-pen"></i>
+            Returned Records
+            </button>
+            </form>
+     
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/js/ccbp-ui-kit.js"></script>
+</body>
+</html>
